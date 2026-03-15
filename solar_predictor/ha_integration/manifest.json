@@ -1,0 +1,20 @@
+{
+  "domain": "solar_predictor",
+  "name": "Solar Predictor",
+  "version": "1.0.0",
+  "documentation": "https://github.com/mrh335/Solar_prediction",
+  "issue_tracker": "https://github.com/mrh335/Solar_prediction/issues",
+  "dependencies": [],
+  "codeowners": ["@mrh335"],
+  "requirements": [
+    "pvlib>=0.10.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "pyyaml>=6.0",
+    "requests>=2.28.0",
+    "scipy>=1.10.0",
+    "pytz>=2023.3"
+  ],
+  "config_flow": true,
+  "iot_class": "cloud_polling"
+}

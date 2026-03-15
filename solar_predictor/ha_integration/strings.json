@@ -1,0 +1,22 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up Solar Predictor",
+        "description": "Enter the path to your solar_predictor config.yaml file and give this integration a name.",
+        "data": {
+          "name": "Integration name",
+          "yaml_path": "Path to config.yaml (e.g. /config/solar_predictor/config.yaml)"
+        }
+      }
+    },
+    "error": {
+      "file_not_found": "The config file was not found at the specified path.",
+      "invalid_config": "The config file is missing required sections (location, array, battery, inverter).",
+      "unknown": "An unexpected error occurred."
+    },
+    "abort": {
+      "already_configured": "Solar Predictor is already configured."
+    }
+  }
+}

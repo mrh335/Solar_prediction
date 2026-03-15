@@ -1,0 +1,56 @@
+# Solar Predictor - System Configuration
+# Edit this file to match your actual installation
+
+system:
+  name: "My Solar System"
+
+location:
+  latitude: 51.5074       # Decimal degrees (positive = North)
+  longitude: -0.1278      # Decimal degrees (positive = East)
+  altitude: 50            # Metres above sea level
+  timezone: "Europe/London"
+
+array:
+  panels:
+    count: 16             # Number of solar panels
+    watts_stc: 405        # Rated power per panel at STC (W)
+    efficiency: 0.20      # Panel efficiency (fraction, e.g. 0.20 = 20%)
+    temp_coefficient: -0.0035  # Power temp coefficient per °C (negative)
+    noct: 45              # Normal Operating Cell Temperature (°C)
+  tilt: 35                # Array tilt from horizontal (degrees)
+  azimuth: 180            # Array azimuth: 0=N, 90=E, 180=S, 270=W
+  losses: 0.05            # System losses (wiring, soiling, mismatch) as fraction
+
+battery:
+  capacity_kwh: 10.0      # Usable capacity (kWh)
+  max_charge_kw: 5.0      # Max charge rate (kW)
+  max_discharge_kw: 5.0   # Max discharge rate (kW)
+  charge_efficiency: 0.96 # Round-trip charge efficiency
+  discharge_efficiency: 0.96
+  min_soc: 0.05           # Minimum state of charge (fraction)
+  max_soc: 1.00           # Maximum state of charge (fraction)
+  initial_soc: 0.50       # Starting SoC for simulations (fraction)
+
+inverter:
+  max_power_kw: 6.0       # Max AC output (kW)
+  efficiency: 0.97        # DC-AC conversion efficiency
+
+load:
+  # Annual household consumption (kWh/yr) - used to build default profile
+  annual_kwh: 4500
+  # Optional: define a custom 24-hour profile (relative multipliers, sum ~24)
+  # Leave null to use the built-in residential profile
+  custom_hourly_profile: null
+  # Example custom profile (24 values, one per hour starting midnight):
+  # custom_hourly_profile: [0.3,0.2,0.2,0.2,0.2,0.3,0.5,0.8,0.9,0.8,0.7,0.7,
+  #                         0.8,0.7,0.6,0.7,0.9,1.2,1.4,1.3,1.1,0.9,0.7,0.5]
+
+calibration:
+  enabled: false
+  production_factor: 1.0  # Multiplicative correction factor
+  consumption_factor: 1.0
+  data_file: null         # Path to historical CSV data file
+
+weather:
+  cache_hours: 1          # How long to cache weather API responses
+  # Open-Meteo is used (free, no API key needed)
