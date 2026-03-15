@@ -1,0 +1,39 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Local data and cache
+data/*.csv
+data/*.json
+data/*.db
+*.sqlite
+
+# Config overrides (keep default, ignore personal)
+config/my_*.yaml
+config/local_*.yaml
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+*.code-workspace
+
+# Logs
+*.log
+
+# Venv install marker
+.venv/.requirements_installed
